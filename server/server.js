@@ -26,6 +26,17 @@ app.use('/api/activities', activityRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/users', userRoutes);
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok' });
+});
+
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Nexus CRM API is running'
+    });
+});
+
+export default app;
 
 export default app;
